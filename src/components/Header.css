@@ -1,0 +1,22 @@
+/* Header.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-search {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+.profile {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
