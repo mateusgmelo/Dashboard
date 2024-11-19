@@ -1,5 +1,4 @@
 // Sidebar.js
-import React from 'react';
 import { List, ListItem, ListItemText } from '@mui/material';
 import './Sidebar.css';
 

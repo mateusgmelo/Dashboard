@@ -1,5 +1,4 @@
 // MainDashboard.js
-import React from 'react';
 import './MainDashboard.css'
 import StatisticsCard from './StatisticsCard';
 import CleanlinessCard from './CleanlinessCard';
