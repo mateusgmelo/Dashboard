@@ -1,7 +1,7 @@
-// CleanlinessCard.js
 import React from 'react';
 import WarningIcon from '@mui/icons-material/Warning';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import styles from './CleanlinessCard.module.css'; 
 
 const CleanlinessCard = () => {
   const placas = [
@@ -12,12 +12,16 @@ const CleanlinessCard = () => {
   ];
 
   return (
-    <div className="cleanliness-card">
+    <div className={styles.cleanlinessCard}>
       <h2>Sujidade das placas</h2>
       {placas.map((placa) => (
-        <div key={placa.id} className="placa">
+        <div key={placa.id} className={styles.placa}>
           <span>{placa.id}: {placa.percent}%</span>
-          {placa.alert ? <WarningIcon color="error" /> : <CheckCircleIcon color="success" />}
+          {placa.alert ? (
+            <WarningIcon className={styles.warningIcon} />
+          ) : (
+            <CheckCircleIcon className={styles.successIcon} />
+          )}
         </div>
       ))}
     </div>

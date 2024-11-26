@@ -1,18 +1,42 @@
-
-.statisticsCard .realtime {
+.statisticsCard {
     display: flex;
-    text-align: center;
-    background-color: rgb(243, 240, 240);
-    height: 318px;
-    box-shadow: 1px 2px 8px 0px rgb(207 202 202);;
     flex-direction: column;
     justify-content: center;
-}
-
-.realtime .energia{
-    font-size: 2em;
+    background-color: rgb(243, 240, 240);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .realtime {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .realtime h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .energia {
+    display: flex;
+    align-items: baseline;
     justify-content: center;
+  }
+  
+  .energia p {
+    font-size: 24px;
     font-weight: bold;
     color: #0066cc;
-}
+    margin: 0 2px;
+  }
+  
+  .energia p:last-child {
+    font-size: 16px;
+    color: #888; 
+  }

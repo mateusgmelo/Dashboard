@@ -1,11 +1,10 @@
 // StatisticsCard.js
 import React from 'react';
-import styles from './StatisticsCard.module.css';
+import styles from './StatisticsCard.module.css'; 
 
 const StatisticsCard = () => {
   return (
     <div className={styles.statisticsCard}>
-      <h2>Real Time</h2>
       <div className={styles.realtime}>
         <h3>Energia gerada</h3>
         <div className={styles.energia}>
