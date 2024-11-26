@@ -1,15 +1,16 @@
 // StatisticsCard.js
 import React from 'react';
-import { CircularProgress } from '@mui/material';
+import styles from './StatisticsCard.module.css';
 
 const StatisticsCard = () => {
   return (
-    <div className="statistics-card">
-      <h2>Suas estatísticas</h2>
-      <div className="stats-content">
-        <CircularProgress variant="determinate" value={32} color="secondary" />
-        <CircularProgress variant="determinate" value={60} color="primary" />
-        <CircularProgress variant="determinate" value={8} color="info" />
+    <div className={styles.statisticsCard}>
+      <h2>Real Time</h2>
+      <div className={styles.realtime}>
+        <h3>Energia gerada</h3>
+        <div className={styles.energia}>
+          <p>120</p><p>kW</p>
+        </div>
       </div>
     </div>
   );

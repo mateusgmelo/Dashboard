@@ -1,0 +1,18 @@
+
+.statisticsCard .realtime {
+    display: flex;
+    text-align: center;
+    background-color: rgb(243, 240, 240);
+    height: 318px;
+    box-shadow: 1px 2px 8px 0px rgb(207 202 202);;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.realtime .energia{
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: #0066cc;
+}
