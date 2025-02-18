@@ -50,8 +50,8 @@ input#search-bar{
   top: -43px;
   right: -45px;
 }
-.profile {
-  font-size: 16px;
-  color: #333;
-  font-weight: bold;
+
+.profile img {
+    width: 50px;
+    height: 50px;
 }

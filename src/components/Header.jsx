@@ -1,6 +1,8 @@
 // Header.js
 import './Header.css'
 import lupa from '../assets/lupa.png';
+import acount from '../assets/acount.svg'
+
 const Header = () => {
   return (
     <div className="header">
@@ -14,7 +16,7 @@ const Header = () => {
         />
       </a>
     </form>
-      <div className="profile">Farmácia Cavalcante</div>
+      <div className="profile"><img src={acount}/></div>
     </div>
   );
 };
