@@ -1,0 +1,38 @@
+/* App.css */
+.app {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .data-chart,
+  .statistics-card,
+  .cleanliness-card,
+  .energy-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
