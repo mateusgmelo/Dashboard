@@ -1,0 +1,105 @@
+/* Estilo geral para a tela de cadastro */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+    padding: 20px;
+  }
+  
+.register-form {
+    width: 100%;
+    max-width: 360px; /* Ajuste para telas menores */
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+  
+.register-form h2 {
+    font-size: 22px; /* Ajuste para telas pequenas */
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #1d3557;
+}
+  
+.input-container {
+    margin-bottom: 15px;
+}
+  
+.input-container input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+  
+.register-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #1d3557;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+  
+  .register-btn:hover {
+    background-color: #457b9d;
+}
+  
+.divider {
+    margin-top: 20px;
+    text-align: center;
+}
+  
+.divider span {
+    font-size: 14px;
+    color: #777;
+}
+  
+.logo img {
+    width: 100px; /* Ajuste o tamanho para caber bem em dispositivos móveis */
+    margin-bottom: 25px;
+}
+  
+/* Responsividade para dispositivos móveis */
+@media (max-width: 480px) {
+.register-form {
+      padding: 20px;
+}
+  
+.register-form h2 {
+      font-size: 20px;
+}
+  
+.register-btn {
+      font-size: 14px;
+      padding: 12px;
+}
+  
+.logo img {
+  width: 80px; /* Reduzir ainda mais o logo para telas muito pequenas */
+}
+}
+  
+@media (max-width: 360px) {
+.register-form {
+    max-width: 100%;
+}
+  
+.register-btn {
+    font-size: 14px;
+    padding: 12px;
+}
+  
+.input-container input {
+    font-size: 14px;
+}
+}
+  

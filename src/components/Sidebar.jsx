@@ -1,4 +1,3 @@
-// Sidebar.js
 import { List, ListItem, ListItemText } from '@mui/material';
 import './Sidebar.css';
 
