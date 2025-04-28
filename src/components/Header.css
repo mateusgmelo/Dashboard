@@ -55,3 +55,11 @@ input#search-bar{
     width: 50px;
     height: 50px;
 }
+.profile{
+  display: flex;
+  align-items: center;
+}
+
+.profile h3 {
+  color: rgb(255, 153, 0);
+}
