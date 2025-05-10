@@ -22,7 +22,7 @@ const Cadastro = () => {
         await api.post('/cadastro',{
             name: nameRef.current.value,
             email: emailRef.current.value,
-            password: passwordRef.current.value
+            password: passwordRef.current.value,
         })
         alert("Usuário cadastrado com sucesso")
         navigate('/dasboard')
