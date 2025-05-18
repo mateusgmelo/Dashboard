@@ -2,23 +2,10 @@
 import './Header.css'
 import lupa from '../assets/lupa.png';
 import acount from '../assets/acount.svg'
-import { useEffect, useState } from "react"
-import api from '../services/api';
+import { useUser } from '../services/useUser';
 
 const Header = () => {
-  const [user, setUser] = useState(null)
-
-  useEffect(() => {
-      async function loadUser() {
-          const token = localStorage.getItem('token')
-          const { data } = await api.get('/me', {
-              headers: { Authorization: `Bearer ${token}` }
-          })
-          setUser(data) 
-      }
-
-      loadUser()
-  }, [])
+  const user = useUser()
 
   return (
     <div className="header">
@@ -33,7 +20,7 @@ const Header = () => {
       </a>
     </form>
       {user && (<div className="profile">
-      <h3>{user.name}</h3>
+      <h3>{user.name || ''}</h3>
       <img src={acount}/>
       </div>)}
     </div>
