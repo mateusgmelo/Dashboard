@@ -24,6 +24,11 @@ const Cadastro = () => {
             email: emailRef.current.value,
             password: passwordRef.current.value,
         })
+        const response = await api.post('/login', {
+        email: emailRef.current.value,
+        password: passwordRef.current.value
+        })
+        localStorage.setItem('token', response.data)
         alert("Usuário cadastrado com sucesso")
         navigate('/dasboard')
         }catch{
