@@ -4,6 +4,7 @@ import StatisticsCard from './StatisticsCard';
 import CleanlinessCard from './CleanlinessCard';
 import EnergyCollectedCard from './EnergyCollectedCard';
 import DataChart from './DataChart';
+import TestData from './TestData';
 
 const MainDashboard = () => {
   return (
@@ -14,6 +15,7 @@ const MainDashboard = () => {
         <StatisticsCard />
         <CleanlinessCard />
         <EnergyCollectedCard />
+        <TestData/>
       </div>
     </div>
   );
