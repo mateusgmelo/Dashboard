@@ -1,26 +1,31 @@
 import { List, ListItem, ListItemText } from '@mui/material';
 import './Sidebar.css';
 import { useNavigate } from 'react-router-dom';
-const Sidebar = () => {
+import PropTypes from 'prop-types';
+
+const Sidebar = ({ show }) => {
   const navigate = useNavigate();
 
   const menuItems = [
-    { label: 'Dashboard'},
-    { label: 'Cadastros'},
-    { label: 'Dados completos'},
-    { label: 'Customize'},
-    { label: 'Configurações'},
-    { label: 'Plano de monitoramento'},
-    { label: 'Conta', path: '/conta' }, // <- aqui está o alvo
-    { label: 'Suporte'},
+    { label: 'Dashboard', path: "/dasboard" },
+    { label: 'Cadastros' },
+    { label: 'Dados completos' },
+    { label: 'Customize' },
+    { label: 'Configurações' },
+    { label: 'Plano de monitoramento' },
+    { label: 'Conta', path: '/conta' },
+    { label: 'Suporte' },
   ];
 
   return (
-    <div className="sidebar">
-      <h2>Monstack</h2>
+    <div className={`sidebar-dropdown ${show ? 'show' : ''}`}>
       <List>
         {menuItems.map((item) => (
-          <ListItem button key={item.label} onClick={() => navigate(item.path)}>
+          <ListItem
+            button
+            key={item.label}
+            onClick={() => item.path && navigate(item.path)}
+          >
             <ListItemText primary={item.label} />
           </ListItem>
         ))}
@@ -31,3 +36,7 @@ const Sidebar = () => {
 
 export default Sidebar;
 
+//esse codigo evita que o vs code fique retornando erro
+Sidebar.propTypes = {
+  show: PropTypes.bool.isRequired,
+};

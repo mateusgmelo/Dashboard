@@ -1,24 +1,20 @@
 // Header.js
 import './Header.css'
-import lupa from '../assets/lupa.png';
 import acount from '../assets/acount.svg'
 import { useUser } from '../services/useUser';
+import { useState } from 'react';
+import Sidebar from './Sidebar';
 
 const Header = () => {
   const user = useUser()
+  const [showSidebar, setShowSidebar] = useState(false);
+  const toggleSidebar = () => setShowSidebar(!showSidebar);
 
   return (
     <div className="header">
-      <form className="search-container">
-      <input type="text" id="search-bar" placeholder="Busca" />
-      <a href="#">
-        <img
-          className="search-icon"
-          src={lupa}
-          alt="Ícone de busca"
-        />
-      </a>
-    </form>
+      <button className="menu-toggle" onClick={toggleSidebar}>☰</button>
+      <Sidebar show={showSidebar} />
+      <h2>Monstack</h2>
       {user && (<div className="profile">
       <h3>{user.name || ''}</h3>
       <img src={acount}/>
