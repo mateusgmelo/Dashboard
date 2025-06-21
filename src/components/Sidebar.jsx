@@ -36,7 +36,7 @@ const Sidebar = ({ show }) => {
 
 export default Sidebar;
 
-//esse codigo evita que o vs code fique retornando erro
+//esse codigo evita que o vs code fique retornando erro por causa dos props
 Sidebar.propTypes = {
   show: PropTypes.bool.isRequired,
 };
