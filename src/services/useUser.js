@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import api from '../services/api'; // ajuste o caminho conforme seu projeto
+import api from '../services/api';
 
 export function useUser() {
   const [user, setUser] = useState(null);
