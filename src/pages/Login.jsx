@@ -10,7 +10,6 @@ const Login = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // A lógica de autenticação pode ser adicionada aqui
     try{
         const {data:token} = await api.post('/login',{
             email: emailRef.current.value,
