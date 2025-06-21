@@ -1,35 +1,5 @@
-import { useEffect, useState } from 'react'
-import api from '../services/api'
-
-function TestData() {
-  const [dados, setDados] = useState([])
-
-  useEffect(() => {
-    const token = localStorage.getItem('token')
-
-    async function fetchDados() {
-      try {
-        const response = await api.get('/me', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-        setDados(response.data.dados)
-      } catch (err) {
-        console.error("Erro ao buscar dados:", err)
-      }
-    }
-
-    // Buscar imediatamente
-    fetchDados()
-
-    // Buscar a cada 5 segundos
-    const interval = setInterval(fetchDados, 5000)
-
-    // Limpar intervalo ao desmontar o componente
-    return () => clearInterval(interval)
-  }, [])
-
+import PropTypes from 'prop-types';
+function TestData({dados}) {
   return (
     <div>
       <h2>Dados do Usuário</h2>
@@ -48,3 +18,8 @@ function TestData() {
 }
 
 export default TestData;
+
+//esse codigo evita que o vs code fique retornando erro por causa dos props
+TestData.propTypes = {
+  dados: PropTypes.bool.isRequired,
+};

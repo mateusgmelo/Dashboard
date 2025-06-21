@@ -1,5 +1,7 @@
 // MainDashboard.js
 import './MainDashboard.css'
+import { useEffect, useState } from 'react';
+import api from '../services/api';
 import CleanlinessCard from './CleanlinessCard';
 import EnergyCollectedCard from './EnergyCollectedCard';
 import DataChart from './DataChart';
@@ -7,15 +9,38 @@ import TestData from './TestData';
 import LastReadingsCard from './LastReadingsCard';
 
 const MainDashboard = () => {
+  const [dados, setDados] = useState([])
+  //Codigo do pooling
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+
+    async function fetchDados() {
+      try {
+        const response = await api.get('/me', {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        setDados(response.data.dados || [])
+      } catch (err) {
+        console.error("Erro ao buscar dados:", err)
+      }
+    }
+
+    fetchDados()
+    const interval = setInterval(fetchDados, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const ultimaLeitura = dados.length > 0 ? dados[dados.length - 1] : null //Variavel que guarda a ultima medição
+
+  //Agora os dados serão passados para os componentes via props, porem talvez seja diferente para o grafico
   return (
     <div className="main-dashboard">
-      <h1>Dashboard</h1>
       <div className="dashboard-cards">
         <DataChart />
-        <LastReadingsCard />
+        <LastReadingsCard voltage={ultimaLeitura.voltage} temperature={ultimaLeitura.temperature}/>
         <CleanlinessCard />
         <EnergyCollectedCard />
-        <TestData/>
+        <TestData dados={dados}/>
       </div>
     </div>
   );
