@@ -3,10 +3,10 @@ import './MainDashboard.css'
 import { useEffect, useState } from 'react';
 import api from '../services/api';
 import CleanlinessCard from './CleanlinessCard';
-import EnergyCollectedCard from './EnergyCollectedCard';
 import DataChart from './DataChart';
 import TestData from './TestData';
 import LastReadingsCard from './LastReadingsCard';
+import MaxMinReadingsCard from './MaxMinReadingsCard';
 
 const MainDashboard = () => {
   const [dados, setDados] = useState([])
@@ -39,7 +39,7 @@ const MainDashboard = () => {
         <DataChart />
         <LastReadingsCard voltage={ultimaLeitura ? ultimaLeitura.voltage : '-'} temperature={ultimaLeitura ? ultimaLeitura.temperature : '-'}/>
         <CleanlinessCard dados={dados ? dados: '-'}/>
-        <EnergyCollectedCard />
+        <MaxMinReadingsCard dados={dados ? dados: '-'}/>
         <TestData dados={dados}/>
       </div>
     </div>
