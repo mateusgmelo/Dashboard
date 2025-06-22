@@ -37,8 +37,8 @@ const MainDashboard = () => {
     <div className="main-dashboard">
       <div className="dashboard-cards">
         <DataChart />
-        <LastReadingsCard voltage={ultimaLeitura.voltage} temperature={ultimaLeitura.temperature}/>
-        <CleanlinessCard />
+        <LastReadingsCard voltage={ultimaLeitura ? ultimaLeitura.voltage : '-'} temperature={ultimaLeitura ? ultimaLeitura.temperature : '-'}/>
+        <CleanlinessCard dados={dados ? dados: '-'}/>
         <EnergyCollectedCard />
         <TestData dados={dados}/>
       </div>

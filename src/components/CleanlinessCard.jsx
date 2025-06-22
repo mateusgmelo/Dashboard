@@ -1,23 +1,48 @@
-import React from 'react';
-import WarningIcon from '@mui/icons-material/Warning';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import styles from './CleanlinessCard.module.css'; 
+import { useState } from 'react'
+import WarningIcon from '@mui/icons-material/Warning'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import styles from './CleanlinessCard.module.css'
+import PropTypes from 'prop-types';
 
-const CleanlinessCard = () => {
-  const placas = [
-    { id: 'Placa 1', percent: 15, alert: true },
-    { id: 'Placa 2', percent: 12, alert: true },
-    { id: 'Placa 3', percent: 6, alert: false },
-    { id: 'Placa 4', percent: 35, alert: true },
-  ];
+const CleanlinessCard = ({ dados }) => {
+  const [limite, setLimite] = useState(100)
+
+  // Agrupar últimas leituras por device
+  const ultimosPorPlaca = {}
+  dados.forEach(dado => {
+    const id = `Placa ${dado.device}`
+    if (!ultimosPorPlaca[id] || new Date(dado.dataHora) > new Date(ultimosPorPlaca[id].dataHora)) {
+      ultimosPorPlaca[id] = dado
+    }
+  })
+
+  const placas = Object.entries(ultimosPorPlaca).map(([id, dado]) => ({
+    id,
+    dirt: dado.dirt,
+    alerta: dado.dirt <= limite
+  }))
 
   return (
     <div className={styles.cleanlinessCard}>
       <h2>Sujidade das placas</h2>
+
+      <div className={styles.limiteInput}>
+        <label>
+          Limite aceitável:
+          <input
+            type="number"
+            value={limite}
+            onChange={(e) => setLimite(Number(e.target.value))}
+            min={0}
+            step={0.1}
+          />
+        </label>
+      </div>
+
       {placas.map((placa) => (
         <div key={placa.id} className={styles.placa}>
-          <span>{placa.id}: {placa.percent}%</span>
-          {placa.alert ? (
+          <span>{placa.id}: {placa.dirt} Lux</span>
+          {placa.alerta ? (
             <WarningIcon className={styles.warningIcon} />
           ) : (
             <CheckCircleIcon className={styles.successIcon} />
@@ -25,7 +50,11 @@ const CleanlinessCard = () => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default CleanlinessCard;
+export default CleanlinessCard
+
+CleanlinessCard.propTypes = {
+  dados: PropTypes.bool.isRequired,
+};
