@@ -7,6 +7,7 @@ import DataChart from './DataChart';
 import TestData from './TestData';
 import LastReadingsCard from './LastReadingsCard';
 import MaxMinReadingsCard from './MaxMinReadingsCard';
+import DataTableCard from './DataTableCard';
 
 const MainDashboard = () => {
   const [dados, setDados] = useState([])
@@ -30,16 +31,15 @@ const MainDashboard = () => {
     return () => clearInterval(interval)
   }, [])
 
-  const ultimaLeitura = dados.length > 0 ? dados[dados.length - 1] : null //Variavel que guarda a ultima medição
-
   //Agora os dados serão passados para os componentes via props, porem talvez seja diferente para o grafico
   return (
     <div className="main-dashboard">
       <div className="dashboard-cards">
         <DataChart />
-        <LastReadingsCard voltage={ultimaLeitura ? ultimaLeitura.voltage : '-'} temperature={ultimaLeitura ? ultimaLeitura.temperature : '-'}/>
+        <LastReadingsCard dados={dados ? dados: '-'}/>
         <CleanlinessCard dados={dados ? dados: '-'}/>
         <MaxMinReadingsCard dados={dados ? dados: '-'}/>
+        <DataTableCard dados={dados ? dados: '-'}/>
         <TestData dados={dados}/>
       </div>
     </div>
