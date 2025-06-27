@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom"
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Conta from "./pages/Conta";
+import Sidebar from './components/Sidebar';
+import Suporte from './pages/Suporte';
+import Header from './components/Header';
 
 const App = () => {
   return (
@@ -12,6 +15,7 @@ const App = () => {
         <Route path="/login" element={<Login/>}/>
         <Route path="/dasboard" element={<Dashboard/>}/>
         <Route path="/conta" element={<Conta/>}/>
+        <Route path="/suporte" element={<Suporte />} />
       </Routes>
     </BrowserRouter>
   );

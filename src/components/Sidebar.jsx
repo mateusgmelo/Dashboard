@@ -8,13 +8,8 @@ const Sidebar = ({ show }) => {
 
   const menuItems = [
     { label: 'Dashboard', path: "/dasboard" },
-    { label: 'Cadastros' },
-    { label: 'Dados completos' },
-    { label: 'Customize' },
-    { label: 'Configurações' },
-    { label: 'Plano de monitoramento' },
     { label: 'Conta', path: '/conta' },
-    { label: 'Suporte' },
+    { label: 'Suporte', path: '/Suporte' },
   ];
 
   return (
