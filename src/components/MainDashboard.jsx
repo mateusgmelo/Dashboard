@@ -35,7 +35,7 @@ const MainDashboard = () => {
   return (
     <div className="main-dashboard">
       <div className="dashboard-cards">
-        <DataChart />
+        <DataChart dados={dados ? dados: '-'}/>
         <LastReadingsCard dados={dados ? dados: '-'}/>
         <CleanlinessCard dados={dados ? dados: '-'}/>
         <MaxMinReadingsCard dados={dados ? dados: '-'}/>
