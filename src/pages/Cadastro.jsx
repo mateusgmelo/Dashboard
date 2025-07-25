@@ -1,54 +1,52 @@
 import { useRef } from 'react';
-import './Cadastro.css'
-import api from '../../src/services/api'
+import './Cadastro.css';
+import api from '../../src/services/api';
 import { Link, useNavigate } from 'react-router-dom';
 
-
 const Cadastro = () => {
-    const nameRef = useRef()
-    const emailRef = useRef()
-    const passwordRef = useRef()
-    const confirmPasswordRef = useRef()
-    const navigate = useNavigate()
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const confirmPasswordRef = useRef();
+  const navigate = useNavigate();
 
-  async function handleSubmit (e){
+  async function handleSubmit(e) {
     e.preventDefault();
-    // Verifique se as senhas coincidem
-    if (passwordRef.value !== confirmPasswordRef.value) {
+
+    if (passwordRef.current.value !== confirmPasswordRef.current.value) {
       alert("As senhas não coincidem!");
       return;
     }
-    try{
-        await api.post('/cadastro',{
-            name: nameRef.current.value,
-            email: emailRef.current.value,
-            password: passwordRef.current.value,
-        })
-        const response = await api.post('/login', {
+
+    try {
+      await api.post('/cadastro', {
+        name: nameRef.current.value,
         email: emailRef.current.value,
-        password: passwordRef.current.value
-        })
-        localStorage.setItem('token', response.data)
-        alert("Usuário cadastrado com sucesso")
-        navigate('/dasboard')
-        }catch{
-            alert("Erro ao cadastrar")
-        }
-  };
+        password: passwordRef.current.value,
+      });
+
+      alert("Cadastro realizado com sucesso! Verifique seu e-mail e clique no link enviado para ativar sua conta.");
+      navigate('/login');
+    } catch (error) {
+      console.error(error);
+      alert("Erro ao cadastrar. Tente novamente.");
+    }
+  }
 
   return (
     <div className="register-container">
       <div className="register-form">
         <h2>CADASTRO</h2>
         <div className="logo">
-          <img src="src\assets\Logo.png" alt="Monstack Logo" />
+          <img src="src/assets/Logo.png" alt="Monstack Logo" />
         </div>
         <form onSubmit={handleSubmit}>
-        <div className="input-container">
+          <div className="input-container">
             <input
-              ref={nameRef}  
+              ref={nameRef}
               type="text"
               placeholder="Nome de usuário"
+              required
             />
           </div>
           <div className="input-container">
@@ -56,7 +54,7 @@ const Cadastro = () => {
               ref={emailRef}
               type="email"
               placeholder="E-mail"
-
+              required
             />
           </div>
           <div className="input-container">
@@ -64,6 +62,7 @@ const Cadastro = () => {
               ref={passwordRef}
               type="password"
               placeholder="Senha"
+              required
             />
           </div>
           <div className="input-container">
@@ -71,15 +70,15 @@ const Cadastro = () => {
               ref={confirmPasswordRef}
               type="password"
               placeholder="Confirmar Senha"
+              required
             />
           </div>
-          <button className="register-btn">
+          <button className="register-btn" type="submit">
             CADASTRAR
           </button>
         </form>
         <Link to="/login">Já tem uma conta? Faça Login</Link>
-        <div className="divider">
-        </div>
+        <div className="divider"></div>
       </div>
     </div>
   );

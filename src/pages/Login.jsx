@@ -9,22 +9,24 @@ const Login = () => {
   const navigate = useNavigate()
 
   async function handleSubmit(e) {
-    e.preventDefault();
-    try{
-        const {data:token} = await api.post('/login',{
-            email: emailRef.current.value,
-            password: passwordRef.current.value
-        })
+  e.preventDefault();
+  try {
+    const { data: token } = await api.post('/login', {
+      email: emailRef.current.value,
+      password: passwordRef.current.value
+    });
 
-        localStorage.setItem('token',token)
-        console.log(token)
-        
-        navigate('/dasboard')
+    localStorage.setItem('token', token);
+    navigate('/dasboard');
+  } catch (error) {
+    if (error.response && error.response.status === 403) {
+      alert("Seu e-mail ainda não foi verificado. Verifique sua caixa de entrada.");
+    } else {
+      alert("Senha ou e-mail incorretos.");
+    }
+  }
+  }
 
-        }catch{
-            alert("senha ou e-mail incorretos")
-        }
-  };
 
   return (
     <div className="login-container">
