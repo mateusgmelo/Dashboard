@@ -19,18 +19,19 @@ const Cadastro = () => {
     }
 
     try {
-      await api.post('/cadastro', {
-        name: nameRef.current.value,
-        email: emailRef.current.value,
-        password: passwordRef.current.value,
-      });
-
-      alert("Cadastro realizado com sucesso! Verifique seu e-mail e clique no link enviado para ativar sua conta.");
-      navigate('/login');
-    } catch (error) {
-      console.error(error);
-      alert("Erro ao cadastrar. Tente novamente.");
+    const res = await api.post('/cadastro', {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    });
+    if (res.status === 201) {
+      localStorage.setItem('email', res.data.email); // salva o email
+      navigate('/verifique-email'); // vai para tela de reenviar link
     }
+  } catch (error) {
+    console.error(error);
+    alert("Erro ao cadastrar. Tente novamente.");
+  }
   }
 
   return (

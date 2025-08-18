@@ -1,0 +1,111 @@
+.verifique-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+  padding: 20px;
+}
+
+.verifique-form {
+  width: 100%;
+  max-width: 360px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.verifique-form h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #1d3557;
+}
+
+.verifique-form p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.verifique-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #1d3557;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+}
+
+.verifique-btn:hover {
+  background-color: #457b9d;
+}
+
+.divider {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.divider span {
+  font-size: 14px;
+  color: #777;
+}
+
+.voltar-login {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: transparent;
+  border: 1px solid #1d3557;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #1d3557;
+  transition: all 0.3s;
+}
+
+.voltar-login:hover {
+  background-color: #1d3557;
+  color: white;
+}
+
+.logo img {
+  width: 100px;
+  margin-bottom: 25px;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .verifique-form {
+    padding: 20px;
+  }
+
+  .verifique-form h2 {
+    font-size: 20px;
+  }
+
+  .verifique-btn, .voltar-login {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .logo img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 360px) {
+  .verifique-form {
+    max-width: 100%;
+  }
+
+  .verifique-btn, .voltar-login {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
