@@ -1,0 +1,75 @@
+/*Estilo para as telas EsqueciSenha.jsx e ResetarSenha.Jsx*/
+/* Estilos globais de autenticação */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f3f4f6; /* cinza claro */
+}
+
+.auth-box {
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  padding: 24px;
+  width: 380px;
+}
+
+.auth-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.auth-input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  transition: border 0.2s ease;
+}
+
+.auth-input:focus {
+  border-color: #1d3557; /* azul */
+  outline: none;
+}
+
+.auth-button {
+  width: 100%;
+  background: #1d3557;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.auth-button:hover {
+  background: #1e40af;
+}
+
+.auth-button.success {
+  background: #16a34a;
+}
+
+.auth-button.success:hover {
+  background: #15803d;
+}
+
+.auth-message {
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.auth-message.success {
+  color: #16a34a;
+}
+
+.auth-message.error {
+  color: #dc2626;
+}
