@@ -6,7 +6,12 @@
     width: 80%;
     margin: 20px auto;
   }
-  
+.listaPlacas {
+  max-height: 250px; /* ajuste conforme o layout */
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-right: 6px; /* espaço pro scroll não colar */
+}
 .cleanlinessCard h2 {
   font-size: 20px;
   font-weight: bold;

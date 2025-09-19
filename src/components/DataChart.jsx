@@ -1,5 +1,5 @@
 import styles from './DataChart.module.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const DataChart = ({ dados }) => {

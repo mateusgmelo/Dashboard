@@ -13,7 +13,7 @@ const MaxMinReadingsCard = ({ dados }) => {
     <div className={styles.item}>
       <h4>{label}</h4>
       <p>{value} {unit}</p>
-      <small>Placa: {device}</small><br />
+      <small className={styles.device}>Placa: {device}</small><br />
       <small>Data/hora: {dataHora}</small>
     </div>
   );

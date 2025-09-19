@@ -31,7 +31,7 @@ const MainDashboard = () => {
     return () => clearInterval(interval)
   }, [])
 
-  //Agora os dados serão passados para os componentes via props, porem talvez seja diferente para o grafico
+  //Agora os dados serão passados para os componentes(cards) via props
   return (
     <div className="main-dashboard">
       <div className="dashboard-cards">

@@ -14,9 +14,16 @@
   margin-bottom: 20px;
   
 }
+.header h2 span{
+  color:#ff9900;
+}
+
 .profile img {
     width: 50px;
     height: 50px;
+}
+.header img{
+  width: 47px;
 }
 .profile{
   display: flex;
@@ -25,4 +32,7 @@
 
 .profile h3 {
   color:#1976d2;
+}
+.header button{
+  color: #ff9900;
 }
