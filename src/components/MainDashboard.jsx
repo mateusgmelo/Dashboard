@@ -40,7 +40,6 @@ const MainDashboard = () => {
         <CleanlinessCard dados={dados ? dados: '-'}/>
         <MaxMinReadingsCard dados={dados ? dados: '-'}/>
         <DataTableCard dados={dados ? dados: '-'}/>
-        <TestData dados={dados}/>
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-/* Header.css */
 .header {
   display: flex;
   justify-content: space-between;
@@ -35,4 +34,10 @@
 }
 .header button{
   color: #ff9900;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espaçamento entre o botão e a logo */
 }
