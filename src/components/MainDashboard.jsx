@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import api from '../services/api';
 import CleanlinessCard from './CleanlinessCard';
 import DataChart from './DataChart';
-import TestData from './TestData';
+//import TestData from './TestData';
 import LastReadingsCard from './LastReadingsCard';
 import MaxMinReadingsCard from './MaxMinReadingsCard';
 import DataTableCard from './DataTableCard';
