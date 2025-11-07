@@ -30,6 +30,7 @@ const VerifiqueEmail = () => {
         <p>Enviamos um link de confirmação para:</p>
         <p><b>{email}</b></p>
         <p>Se não encontrar, verifique também a pasta de spam.</p>
+        <p>Caso não confirme o seu E-mail, em 5 horas seu cadastro será removido automaticamente do nosso sistema</p>
         <button 
           className="verifique-btn" 
           onClick={reenviarLink} 

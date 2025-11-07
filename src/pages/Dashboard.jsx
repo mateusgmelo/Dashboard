@@ -38,6 +38,7 @@ function Dashboard() {
           <div className="acesso-container">
             <h2>Acesso pendente 🚫</h2>
             <p>Seu acesso ainda não foi liberado pelo administrador.</p>
+            <p>Em 5 horas seu Cadastro será removido automaticamente do nosso sistema.</p>
           </div>
         )}
       </div>

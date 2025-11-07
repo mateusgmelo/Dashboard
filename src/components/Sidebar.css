@@ -27,3 +27,10 @@
   cursor: pointer;
   z-index: 1100;
 }
+
+@media only screen and (max-width: 401px) {
+  .menu-toggle {
+  font-size: 20px;
+  padding: 4px 8px;
+  }
+}

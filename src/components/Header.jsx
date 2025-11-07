@@ -15,7 +15,7 @@ const Header = () => {
       
       <div className="left-section">
         <button className="menu-toggle" onClick={toggleSidebar}>☰</button>
-        <img src={Logo} alt="Logo SolarStack" id="logo" />
+        <img src={Logo} alt="Logo Monstack" id="logo" />
         <h2><span>Solar</span>Stack</h2>
       </div>
       <Sidebar show={showSidebar} />
