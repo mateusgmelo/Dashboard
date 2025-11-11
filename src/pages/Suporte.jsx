@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Suporte() {
   // O componente agora só se preocupa com o seu próprio conteúdo.
   return (
