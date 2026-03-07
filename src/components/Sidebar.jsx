@@ -9,7 +9,7 @@ const Sidebar = ({ show }) => {
   const menuItems = [
     { label: 'Dashboard', path: "/dasboard" },
     { label: 'Conta', path: '/conta' },
-    { label: 'Suporte', path: '/Suporte' },
+    //{ label: 'Suporte', path: '/Suporte' },
   ];
 
   return (
